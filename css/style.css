@@ -1,0 +1,524 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #3a3a3a;
+  line-height: 1.8;
+  background-color: #fdfbf7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Header / Navigation ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #4a7c59;
+}
+
+.logo span {
+  font-weight: 300;
+  color: #8b7355;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #666;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+  color: #4a7c59;
+}
+
+/* Language toggle button */
+.lang-toggle {
+  padding: 6px 14px;
+  border: 1px solid #4a7c59;
+  border-radius: 50px;
+  background: transparent;
+  color: #4a7c59;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+
+.lang-toggle:hover {
+  background: #4a7c59;
+  color: #fff;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #3a3a3a;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* ===== Language Switching ===== */
+.lang-en { display: none; }
+.lang-ko { display: inline; }
+
+body[data-lang="en"] .lang-ko { display: none; }
+body[data-lang="en"] .lang-en { display: inline; }
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #3a3a3a;
+}
+
+.philosophy-text {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #3a3a3a;
+  margin-bottom: 24px;
+}
+
+.responsibility-text {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #3a3a3a;
+  margin-bottom: 24px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  background: linear-gradient(160deg, #fdfbf7 0%, #f0ebe3 40%, #e8eed5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 124, 89, 0.06) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 20px;
+  border: 1px solid #4a7c59;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: #4a7c59;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #2c2c2c;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem;
+  color: #8b7355;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* ===== Section Common ===== */
+.section {
+  padding: 100px 24px;
+}
+
+.section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4a7c59;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-divider {
+  width: 40px;
+  height: 2px;
+  background: #4a7c59;
+  margin-bottom: 40px;
+}
+
+/* ===== About Section ===== */
+.about {
+  background-color: #fdfbf7;
+}
+
+.about-content {
+  max-width: 700px;
+}
+
+
+/* ===== Philosophy Section ===== */
+.philosophy {
+  background: linear-gradient(180deg, #f4f1eb 0%, #eef2e6 100%);
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.philosophy-visual {
+  background: #fdfbf7;
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+}
+
+.philosophy-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.philosophy-highlight {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #4a7c59;
+  margin-bottom: 8px;
+}
+
+.philosophy-highlight-en {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 300;
+}
+
+
+/* ===== EWG Badge ===== */
+.ewg-badges {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.ewg-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #e8eed5;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: #4a7c59;
+  font-weight: 500;
+}
+
+.ewg-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4a7c59;
+}
+
+/* ===== Responsibility Section ===== */
+.responsibility {
+  background-color: #fdfbf7;
+}
+
+.responsibility-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+
+.responsibility-visual {
+  background: linear-gradient(135deg, #4a7c59 0%, #5a9a6a 100%);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 30px rgba(74, 124, 89, 0.15);
+}
+
+.responsibility-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.responsibility-highlight {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.responsibility-sub {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+/* ===== Values Section ===== */
+.values {
+  background: linear-gradient(180deg, #f4f1eb 0%, #fdfbf7 100%);
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 28px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.value-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.value-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+}
+
+.value-desc {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ===== Contact / Footer ===== */
+.footer {
+  background: #2c2c2c;
+  color: #ccc;
+  padding: 60px 24px 40px;
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-brand span {
+  font-weight: 300;
+  color: #8b7355;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #999;
+  max-width: 400px;
+}
+
+.footer-contact h3 {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-contact p {
+  font-size: 0.85rem;
+  line-height: 2;
+  color: #999;
+}
+
+.footer-bottom {
+  max-width: 960px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #444;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* ===== Scroll Animations ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: rgba(253, 251, 247, 0.98);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .section {
+    padding: 64px 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-content,
+  .philosophy-content,
+  .responsibility-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .ewg-badges {
+    flex-direction: column;
+  }
+}
